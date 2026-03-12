@@ -3,6 +3,8 @@
 <head>
 <title>Helio Sun Solar Energy</title>
 
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
 <style>
 
 body{
@@ -16,27 +18,35 @@ background:#ff7a00;
 color:white;
 padding:20px;
 text-align:center;
-font-size:28px;
+font-size:26px;
+}
+
+.hero{
+text-align:center;
+padding:30px;
+background:white;
 }
 
 .container{
-text-align:center;
-padding:40px;
+max-width:400px;
+margin:auto;
+padding:20px;
 }
 
 .box{
 background:white;
-width:350px;
-margin:auto;
 padding:20px;
 border-radius:10px;
-box-shadow:0 0 10px gray;
+box-shadow:0 0 10px rgba(0,0,0,0.2);
+text-align:center;
 }
 
 input{
 width:90%;
-padding:10px;
+padding:12px;
 margin:10px;
+border:1px solid #ccc;
+border-radius:5px;
 }
 
 button{
@@ -46,16 +56,39 @@ border:none;
 padding:12px;
 width:95%;
 font-size:16px;
+border-radius:5px;
 cursor:pointer;
 }
 
 button:hover{
-background:#e96a00;
+background:#e06600;
 }
 
 .result{
 margin-top:20px;
 font-size:18px;
+}
+
+.features{
+background:white;
+padding:30px;
+text-align:center;
+margin-top:30px;
+}
+
+.lead{
+background:white;
+padding:30px;
+text-align:center;
+margin-top:30px;
+}
+
+footer{
+background:#222;
+color:white;
+text-align:center;
+padding:15px;
+margin-top:30px;
 }
 
 .whatsapp{
@@ -67,11 +100,10 @@ color:white;
 padding:15px;
 border-radius:50%;
 text-decoration:none;
-font-size:18px;
+font-size:20px;
 }
 
 </style>
-
 </head>
 
 <body>
@@ -80,14 +112,16 @@ font-size:18px;
 Helio Sun Solar Energy
 </header>
 
-<div class="container">
-
+<div class="hero">
 <h2>Solar Calculator</h2>
-<p>Enter your monthly electricity bill to estimate solar system size</p>
+<p>Check your solar system size, subsidy and savings</p>
+</div>
+
+<div class="container">
 
 <div class="box">
 
-<input type="number" id="bill" placeholder="Enter Monthly Bill ₹">
+<input type="number" id="bill" placeholder="Enter Monthly Electricity Bill ₹">
 
 <button onclick="calculate()">Calculate</button>
 
@@ -97,7 +131,43 @@ Helio Sun Solar Energy
 
 </div>
 
-<a class="whatsapp" href="https://wa.me/919118690770">Chat</a>
+<div class="features">
+
+<h2>Why Choose Solar?</h2>
+
+<p>✔ Save up to 90% electricity bill</p>
+
+<p>✔ Government subsidy available</p>
+
+<p>✔ 25 years panel life</p>
+
+<p>✔ Clean and renewable energy</p>
+
+</div>
+
+<div class="lead">
+
+<h2>Get Free Solar Consultation</h2>
+
+<input type="text" placeholder="Your Name"><br>
+
+<input type="tel" placeholder="Phone Number"><br>
+
+<input type="text" placeholder="City"><br>
+
+<button>Submit</button>
+
+</div>
+
+<footer>
+
+Helio Sun Solar Energy  
+<br>
+Call / WhatsApp: 9118690770
+
+</footer>
+
+<a class="whatsapp" href="https://wa.me/919118690770">💬</a>
 
 <script>
 
@@ -105,15 +175,26 @@ function calculate(){
 
 let bill=document.getElementById("bill").value;
 
-let system=bill/1000;
+let system=2.46;
 
-let cost=system*60000;
+let cost=140000;
+
+let subsidy=90000;
+
+let finalcost=cost-subsidy;
 
 let saving=bill*0.9;
 
 document.getElementById("result").innerHTML=
-"Recommended Solar System: "+system.toFixed(2)+" kW <br><br>" +
-"Estimated Cost: ₹"+cost+" <br><br>" +
+
+"Recommended Solar System: "+system+" kW <br><br>" +
+
+"System Cost: ₹"+cost+" <br><br>" +
+
+"Government Subsidy: ₹"+subsidy+" <br><br>" +
+
+"Final Cost After Subsidy: ₹"+finalcost+" <br><br>" +
+
 "Estimated Monthly Saving: ₹"+saving;
 
 }
