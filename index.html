@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Helio Sun Solar Calculator</title>
+</head>
+
+<body style="font-family:Arial;text-align:center">
+
+<h1>Helio Sun Solar Energy</h1>
+
+<h3>Solar Calculator</h3>
+
+<input type="number" id="bill" placeholder="Enter Monthly Bill ₹">
+
+<br><br>
+
+<button onclick="calc()">Calculate</button>
+
+<h3 id="result"></h3>
+
+<script>
+
+function calc(){
+
+let bill=document.getElementById("bill").value;
+
+let system=bill/1000;
+
+let cost=system*60000;
+
+document.getElementById("result").innerHTML=
+"Recommended Solar System: "+system.toFixed(2)+" kW <br>" +
+"Estimated Cost: ₹"+cost;
+
+}
+
+</script>
+
+<a href="https://wa.me/919118690770" 
+style="position:fixed;bottom:20px;right:20px;background:#25D366;color:white;padding:15px;border-radius:50%;text-decoration:none;">
+WhatsApp
+</a>
+
+</body>
+</html>
