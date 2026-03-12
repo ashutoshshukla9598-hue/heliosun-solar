@@ -1,26 +1,107 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Helio Sun Solar Calculator</title>
+<title>Helio Sun Solar Energy</title>
+
+<style>
+
+body{
+font-family:Arial;
+margin:0;
+background:#f4f4f4;
+}
+
+header{
+background:#ff7a00;
+color:white;
+padding:20px;
+text-align:center;
+font-size:28px;
+}
+
+.container{
+text-align:center;
+padding:40px;
+}
+
+.box{
+background:white;
+width:350px;
+margin:auto;
+padding:20px;
+border-radius:10px;
+box-shadow:0 0 10px gray;
+}
+
+input{
+width:90%;
+padding:10px;
+margin:10px;
+}
+
+button{
+background:#ff7a00;
+color:white;
+border:none;
+padding:12px;
+width:95%;
+font-size:16px;
+cursor:pointer;
+}
+
+button:hover{
+background:#e96a00;
+}
+
+.result{
+margin-top:20px;
+font-size:18px;
+}
+
+.whatsapp{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#25D366;
+color:white;
+padding:15px;
+border-radius:50%;
+text-decoration:none;
+font-size:18px;
+}
+
+</style>
+
 </head>
 
-<body style="font-family:Arial;text-align:center">
+<body>
 
-<h1>Helio Sun Solar Energy</h1>
+<header>
+Helio Sun Solar Energy
+</header>
 
-<h3>Solar Calculator</h3>
+<div class="container">
+
+<h2>Solar Calculator</h2>
+<p>Enter your monthly electricity bill to estimate solar system size</p>
+
+<div class="box">
 
 <input type="number" id="bill" placeholder="Enter Monthly Bill ₹">
 
-<br><br>
+<button onclick="calculate()">Calculate</button>
 
-<button onclick="calc()">Calculate</button>
+<div class="result" id="result"></div>
 
-<h3 id="result"></h3>
+</div>
+
+</div>
+
+<a class="whatsapp" href="https://wa.me/919118690770">Chat</a>
 
 <script>
 
-function calc(){
+function calculate(){
 
 let bill=document.getElementById("bill").value;
 
@@ -28,18 +109,16 @@ let system=bill/1000;
 
 let cost=system*60000;
 
+let saving=bill*0.9;
+
 document.getElementById("result").innerHTML=
-"Recommended Solar System: "+system.toFixed(2)+" kW <br>" +
-"Estimated Cost: ₹"+cost;
+"Recommended Solar System: "+system.toFixed(2)+" kW <br><br>" +
+"Estimated Cost: ₹"+cost+" <br><br>" +
+"Estimated Monthly Saving: ₹"+saving;
 
 }
 
 </script>
-
-<a href="https://wa.me/919118690770" 
-style="position:fixed;bottom:20px;right:20px;background:#25D366;color:white;padding:15px;border-radius:50%;text-decoration:none;">
-WhatsApp
-</a>
 
 </body>
 </html>
