@@ -61,6 +61,10 @@ border-radius:5px;
 cursor:pointer;
 }
 
+button:hover{
+background:#e06600;
+}
+
 .result{
 margin-top:20px;
 font-size:18px;
@@ -111,6 +115,19 @@ text-decoration:none;
 font-size:20px;
 }
 
+#leadpopup{
+position:fixed;
+bottom:90px;
+left:20px;
+background:white;
+padding:12px 18px;
+box-shadow:0 0 10px rgba(0,0,0,0.2);
+border-radius:8px;
+font-size:14px;
+display:none;
+z-index:999;
+}
+
 </style>
 
 </head>
@@ -124,6 +141,7 @@ Helio Sun Solar Energy
 <div class="hero">
 <h2>Solar Calculator</h2>
 <p>Check solar system size, subsidy and savings</p>
+<p>⚡ 500+ Homes Switched to Solar with Us</p>
 </div>
 
 <div class="container">
@@ -195,6 +213,8 @@ Call / WhatsApp: 9118690770
 
 <a class="whatsapp" href="https://wa.me/919118690770">💬</a>
 
+<div id="leadpopup"></div>
+
 <script>
 
 function calculate(){
@@ -257,6 +277,32 @@ let message="Solar Enquiry:%0AName: "+name+"%0APhone: "+phone+"%0ACity: "+city+"
 window.open("https://wa.me/919118690770?text="+message);
 
 }
+
+let leads=[
+"Ravi from Varanasi requested 3kW solar",
+"Amit from Jaunpur requested 2kW solar",
+"Sunil from Bhadohi requested 5kW solar",
+"Rahul from Chandauli requested solar quote",
+"Vikas from Mirzapur requested 3kW solar"
+];
+
+function showLead(){
+
+let popup=document.getElementById("leadpopup");
+
+let random=leads[Math.floor(Math.random()*leads.length)];
+
+popup.innerHTML="🔔 "+random;
+
+popup.style.display="block";
+
+setTimeout(()=>{
+popup.style.display="none";
+},4000);
+
+}
+
+setInterval(showLead,8000);
 
 </script>
 
