@@ -1,6 +1,11 @@
-<!DOCTYPE html><html>
+<!DOCTYPE html>
+<html>
 <head>
-<title>Helio Sun Solar Energy</title><meta name="viewport" content="width=device-width, initial-scale=1"><style>
+<title>Helio Sun Solar Energy</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
 
 body{
 font-family:Arial;
@@ -90,17 +95,75 @@ text-decoration:none;
 font-size:20px;
 }
 
-</style></head><body><header>
+</style>
+
+</head>
+
+<body>
+
+<header>
 Helio Sun Solar Energy
-</header><div class="hero"><h2>Solar Calculator</h2><p>Check solar system size, subsidy and savings</p></div><div class="container"><div class="box"><input type="number" id="bill" placeholder="Enter Monthly Electricity Bill ₹"><button onclick="calculate()">Calculate</button>
+</header>
 
-<div class="result" id="result"></div></div><div class="box"><h3>Get Free Solar Quote</h3><input type="text" id="name" placeholder="Your Name"><input type="tel" id="phone" placeholder="Phone Number"><input type="text" id="city" placeholder="City"><button onclick="sendLead()">Submit</button>
+<div class="hero">
 
-</div></div><div class="features"><h2>Why Install Solar?</h2><p>✔ Save up to 90% electricity bill</p><p>✔ Government subsidy available</p><p>✔ 25 years panel life</p><p>✔ Increase property value</p></div><footer>Helio Sun Solar Energy
+<h2>Solar Calculator</h2>
+
+<p>Check solar system size, subsidy and savings</p>
+
+</div>
+
+<div class="container">
+
+<div class="box">
+
+<input type="number" id="bill" placeholder="Enter Monthly Electricity Bill ₹">
+
+<button onclick="calculate()">Calculate</button>
+
+<div class="result" id="result"></div>
+
+</div>
+
+<div class="box">
+
+<h3>Get Free Solar Quote</h3>
+
+<input type="text" id="name" placeholder="Your Name">
+
+<input type="tel" id="phone" placeholder="Phone Number">
+
+<input type="text" id="city" placeholder="City">
+
+<button onclick="sendLead()">Submit</button>
+
+</div>
+
+</div>
+
+<div class="features">
+
+<h2>Why Install Solar?</h2>
+
+<p>✔ Save up to 90% electricity bill</p>
+
+<p>✔ Government subsidy available</p>
+
+<p>✔ 25 years panel life</p>
+
+<p>✔ Increase property value</p>
+
+</div>
+
+<footer>
+
+Helio Sun Solar Energy  
 <br>
 Call / WhatsApp: 9118690770
 
-</footer><a class="whatsapp" href="https://wa.me/919118690770">💬</a>
+</footer>
+
+<a class="whatsapp" href="https://wa.me/919118690770">💬</a>
 
 <script>
 
@@ -109,27 +172,31 @@ function calculate(){
 let bill=document.getElementById("bill").value;
 
 let system=0;
+let cost=0;
+let subsidy=0;
 
 if(bill >= 200 && bill <= 999){
 system = 2;
+cost = 140000;
+subsidy = 90000;
 }
 
 else if(bill >= 1000 && bill <= 4000){
 system = 3;
+cost = 180000;
+subsidy = 108000;
 }
 
 else if(bill >= 4001){
 system = 5;
+cost = 315000;
+subsidy = 108000;
 }
 
 else{
 document.getElementById("result").innerHTML="Please enter valid bill amount";
 return;
 }
-
-let cost=system*57000;
-
-let subsidy=90000;
 
 let finalcost=cost-subsidy;
 
@@ -143,11 +210,11 @@ document.getElementById("result").innerHTML=
 
 "Recommended Solar System: "+system+" kW <br><br>" +
 
-"Estimated System Cost: ₹"+Math.round(cost)+" <br><br>" +
+"Estimated System Cost: ₹"+cost+" <br><br>" +
 
 "Government Subsidy: ₹"+subsidy+" <br><br>" +
 
-"Final Cost After Subsidy: ₹"+Math.round(finalcost)+" <br><br>" +
+"Final Cost After Subsidy: ₹"+finalcost+" <br><br>" +
 
 "Monthly Saving: ₹"+Math.round(monthlySaving)+" <br><br>" +
 
@@ -169,5 +236,7 @@ window.open("https://wa.me/919118690770?text="+message);
 
 }
 
-</script></body>
-  </html>
+</script>
+
+</body>
+</html>
