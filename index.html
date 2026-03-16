@@ -61,10 +61,6 @@ border-radius:5px;
 cursor:pointer;
 }
 
-button:hover{
-background:#e06600;
-}
-
 .result{
 margin-top:20px;
 font-size:18px;
@@ -76,18 +72,18 @@ padding:30px;
 text-align:center;
 }
 
-.callbtn{
+.callnow{
 text-align:center;
-margin:20px;
+margin:30px;
 }
 
-.callbtn a{
+.callnow a{
 background:#ff7a00;
 color:white;
-padding:12px 20px;
+padding:15px 30px;
+font-size:20px;
 text-decoration:none;
-border-radius:5px;
-font-size:18px;
+border-radius:8px;
 }
 
 .map{
@@ -126,11 +122,8 @@ Helio Sun Solar Energy
 </header>
 
 <div class="hero">
-
 <h2>Solar Calculator</h2>
-
 <p>Check solar system size, subsidy and savings</p>
-
 </div>
 
 <div class="container">
@@ -175,10 +168,8 @@ Helio Sun Solar Energy
 
 </div>
 
-<div class="callbtn">
-
+<div class="callnow">
 <a href="tel:9118690770">📞 Call Now</a>
-
 </div>
 
 <div class="map">
@@ -186,7 +177,7 @@ Helio Sun Solar Energy
 <h2>Our Location</h2>
 
 <iframe
-src="https://maps.google.com/maps?q=Lucknow&t=&z=13&ie=UTF8&iwloc=&output=embed"
+src="https://maps.google.com/maps?q=92H2%2BJ7F%20Varanasi&t=&z=15&ie=UTF8&iwloc=&output=embed"
 width="100%"
 height="250"
 style="border:0;">
@@ -239,12 +230,6 @@ return;
 
 let finalcost=cost-subsidy;
 
-let monthlySaving=bill*0.9;
-
-let yearlySaving=monthlySaving*12;
-
-let saving25=yearlySaving*25;
-
 document.getElementById("result").innerHTML=
 
 "Recommended Solar System: "+system+" kW <br><br>" +
@@ -253,11 +238,7 @@ document.getElementById("result").innerHTML=
 
 "Government Subsidy: ₹"+subsidy+" <br><br>" +
 
-"Final Cost After Subsidy: ₹"+finalcost+" <br><br>" +
-
-"Monthly Saving: ₹"+Math.round(monthlySaving)+" <br><br>" +
-
-"25 Year Saving: ₹"+Math.round(saving25);
+"Final Cost After Subsidy: ₹"+finalcost;
 
 }
 
@@ -269,7 +250,9 @@ let phone=document.getElementById("phone").value;
 
 let city=document.getElementById("city").value;
 
-let message="Solar Enquiry:%0AName: "+name+"%0APhone: "+phone+"%0ACity: "+city;
+let bill=document.getElementById("bill").value;
+
+let message="Solar Enquiry:%0AName: "+name+"%0APhone: "+phone+"%0ACity: "+city+"%0AMonthly Bill: ₹"+bill;
 
 window.open("https://wa.me/919118690770?text="+message);
 
@@ -278,4 +261,4 @@ window.open("https://wa.me/919118690770?text="+message);
 </script>
 
 </body>
-</html>
+  </html>
